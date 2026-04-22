@@ -1,37 +1,40 @@
 import { motion } from 'framer-motion';
-
-const experiences = [
-  {
-    role: "Frontend Web Developer",
-    company: "Santander Consumer Argentina",
-    period: "Oct 2022 - Actualidad",
-    description: "Desarrollo de mejoras en sistemas financieros, optimización de módulos de cálculo y simulación de préstamos. Implementación web de soluciones robustas para la gestión de créditos.",
-    logo: "/logos/santander.svg"
-  },
-  {
-    role: "Desarrollador Web Junior",
-    company: "TalentHackers by Catenon Group",
-    period: "Ene 2019 - Ene 2021",
-    description: "Actualización de soluciones y portales para la selección de talento IT. Refactorización de código y mejora de la experiencia de usuario (UX).",
-    logo: "/logos/talenthackers.png"
-  },
-  {
-    role: "Desarrollador Web",
-    company: "Oh! Tea",
-    period: "Feb 2021 - Ene 2022",
-    description: "Desarrollador enfocado en trasladar la armonía de Oh Tea al mundo digital. Utilizando React y Tailwind CSS, construyo interfaces fluidas y visualmente impecables, asegurando que la experiencia de nuestros usuarios en la web sea tan gratificante como disfrutar de uno de nuestros tés.",
-    logo: "/logos/ohtea.png"
-  },
-  {
-    role: "Atención al Cliente",
-    company: "Mera Solutions",
-    period: "Feb 2018 - Sep 2018",
-    description: "Resolución de consultas y asistencia a usuarios garantizando altos estándares de calidad y satisfacción operativa.",
-    logo: "/logos/mera.png"
-  }
-];
+import { useLanguage } from '../context/LanguageContext';
 
 export function Experience() {
+  const { t } = useLanguage();
+
+  const experiences = [
+    {
+      role: t.experience.roles.frontend,
+      company: "Santander Consumer Argentina",
+      period: `Oct 2022 - ${t.experience.actualidad}`,
+      description: t.experience.descriptions.santander,
+      logo: "/logos/santander.svg"
+    },
+    {
+      role: t.experience.roles.junior,
+      company: "TalentHackers by Catenon Group",
+      period: `Jan 2019 - Jan 2021`,
+      description: t.experience.descriptions.talent,
+      logo: "/logos/talenthackers.png"
+    },
+    {
+      role: t.experience.roles.dev,
+      company: "Oh! Tea",
+      period: `Feb 2021 - Jan 2022`,
+      description: t.experience.descriptions.ohtea,
+      logo: "/logos/ohtea.png"
+    },
+    {
+      role: t.experience.roles.customer,
+      company: "Mera Solutions",
+      period: `Feb 2018 - Sep 2018`,
+      description: t.experience.descriptions.mera,
+      logo: "/logos/mera.png"
+    }
+  ];
+
   return (
     <section className="py-24 max-w-4xl mx-auto px-6">
       <motion.h3 
@@ -40,7 +43,7 @@ export function Experience() {
         viewport={{ once: true, margin: "-100px" }}
         className="text-3xl font-bold mb-12 text-gray-900 dark:text-white tracking-tight font-['Space_Grotesk']"
       >
-        Experiencia Profesional
+        {t.experience.title}
       </motion.h3>
 
       <div className="space-y-6">

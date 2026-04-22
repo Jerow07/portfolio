@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { useLanguage } from '../context/LanguageContext';
 
 const technologies = [
   { name: 'React', url: 'react/61DAFB' },
@@ -18,6 +19,8 @@ const technologies = [
 ];
 
 export function Technologies() {
+  const { t } = useLanguage();
+
   return (
     <section className="py-24 max-w-4xl mx-auto px-6">
       <motion.h3 
@@ -26,7 +29,7 @@ export function Technologies() {
         viewport={{ once: true, margin: "-100px" }}
         className="text-3xl font-bold mb-16 text-gray-900 dark:text-white tracking-tight font-['Space_Grotesk'] text-center"
       >
-        Tecnologías & Herramientas
+        {t.tech.title}
       </motion.h3>
 
       <div className="flex flex-wrap justify-center gap-6 md:gap-8">
