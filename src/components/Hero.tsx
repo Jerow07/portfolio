@@ -72,7 +72,7 @@ export function Hero() {
           <div className="flex items-center gap-4">
             <SocialLink href="https://www.linkedin.com/in/jeronimo-parra-099411227/" icon={<Linkedin className="w-6 h-6" />} label="LinkedIn" />
             <SocialLink href="https://www.instagram.com/jeroww/" icon={<Instagram className="w-6 h-6" />} label="Instagram" />
-            <SocialLink href="mailto:geronimoparra@hotmail.com" icon={<Mail className="w-6 h-6" />} label="Email" />
+            <SocialLink href="mailto:jeronimoparra@outlook.com" icon={<Mail className="w-6 h-6" />} label="Email" />
             <SocialLink href="https://github.com/Jerow07" icon={<Github className="w-6 h-6" />} label="GitHub" />
           </div>
         </motion.div>
