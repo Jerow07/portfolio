@@ -1,16 +1,18 @@
 import { motion } from 'framer-motion';
-import { Mail, Linkedin, Github, Instagram, ChevronDown } from 'lucide-react';
+import { Mail, Linkedin, Github, Instagram, ChevronDown, Download } from 'lucide-react';
 import React from 'react';
 import { InteractiveNet } from './InteractiveNet';
+import { Avatar } from './Avatar';
 import { useLanguage } from '../context/LanguageContext';
 
 export function Hero() {
-  const { t } = useLanguage();
-  
+  const { t, language } = useLanguage();
+  const cvLabel = language === 'es' ? 'Descargar CV' : 'Download CV';
+
   return (
-    <section className="relative min-h-screen max-w-[100vw] overflow-hidden flex flex-col px-6 pt-32 pb-10">
+    <section id="inicio" className="relative min-h-screen max-w-[100vw] overflow-hidden flex flex-col px-6 pt-32 pb-10">
       <InteractiveNet />
-      
+
       <div className="flex-1 flex flex-col justify-center w-full">
         <motion.div
           className="relative z-10 max-w-3xl mx-auto w-full"
@@ -18,6 +20,11 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
+          {/* Avatar */}
+          <div className="flex justify-center md:justify-start mb-8">
+            <Avatar />
+          </div>
+
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-gray-900 dark:text-white mb-6 font-['Space_Grotesk'] flex flex-wrap gap-x-[0.3em]">
             {`${t.hero.hello} ${t.hero.name}`.split(" ").map((word, i) => (
               <motion.span
@@ -39,11 +46,11 @@ export function Hero() {
             {t.hero.role}
           </h2>
           <h3 className="text-lg md:text-xl text-gray-500 dark:text-gray-400 font-medium mb-8">
-            {t.hero.role} {t.hero.company} 
-            <a 
-              href="https://www.santanderconsumer.es/" 
-              target="_blank" 
-              rel="noopener noreferrer" 
+            {t.hero.role} {t.hero.company}
+            <a
+              href="https://www.santanderconsumer.es/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-gray-900 dark:text-gray-200 hover:text-yellow-600 dark:hover:text-yellow-400 underline decoration-yellow-600/30 dark:decoration-yellow-400/30 hover:decoration-yellow-600 dark:hover:decoration-yellow-400 underline-offset-4 transition-all duration-300 ml-1"
             >
               Santander Consumer
@@ -56,9 +63,9 @@ export function Hero() {
               const rest = part.slice(link.length);
               return (
                 <React.Fragment key={i}>
-                  <a 
-                    href={`https://www.${link}`} 
-                    target="_blank" 
+                  <a
+                    href={`https://www.${link}`}
+                    target="_blank"
                     className="text-yellow-600 dark:text-yellow-400 hover:underline"
                   >
                     www.{link}
@@ -68,17 +75,26 @@ export function Hero() {
               );
             })}
           </p>
-          
-          <div className="flex items-center gap-4">
+
+          <div className="flex flex-wrap items-center gap-4">
             <SocialLink href="https://www.linkedin.com/in/jeronimo-parra-099411227/" icon={<Linkedin className="w-6 h-6" />} label="LinkedIn" />
             <SocialLink href="https://www.instagram.com/jeroww/" icon={<Instagram className="w-6 h-6" />} label="Instagram" />
             <SocialLink href="mailto:jeronimoparra@outlook.com" icon={<Mail className="w-6 h-6" />} label="Email" />
             <SocialLink href="https://github.com/Jerow07" icon={<Github className="w-6 h-6" />} label="GitHub" />
+
+            <a
+              href="/cv.pdf"
+              download
+              className="flex items-center gap-2 px-5 py-3 bg-yellow-400 hover:bg-yellow-300 text-black font-bold rounded-2xl text-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_25px_rgba(250,204,21,0.4)]"
+            >
+              <Download className="w-4 h-4" />
+              {cvLabel}
+            </a>
           </div>
         </motion.div>
       </div>
 
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1, y: [0, 10, 0] }}
         transition={{ duration: 1.5, repeat: Infinity, delay: 1 }}
@@ -93,7 +109,7 @@ export function Hero() {
 
 function SocialLink({ href, icon, label }: { href: string, icon: React.ReactNode, label: string }) {
   return (
-    <a 
+    <a
       href={href}
       target="_blank"
       rel="noopener noreferrer"

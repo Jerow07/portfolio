@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion';
 import { useLanguage } from '../context/LanguageContext';
-import { 
-  ExternalLink, Github, Calendar, Activity, 
-  Truck, Sparkles, ShoppingCart 
+import {
+  ExternalLink, Github, Calendar, Activity,
+  Truck, Sparkles, ShoppingCart, Package, Pill
 } from 'lucide-react';
 import React from 'react';
 
@@ -11,7 +11,9 @@ const projectIcons = {
   dialcheck: Activity,
   parkapp: Truck,
   amore: Sparkles,
-  compras: ShoppingCart
+  compras: ShoppingCart,
+  bonsur: Package,
+  pastillero: Pill
 };
 
 const projectStyles = {
@@ -19,15 +21,19 @@ const projectStyles = {
   dialcheck: "from-teal-500/20 to-blue-500/20 group-hover:from-teal-500/30 group-hover:to-blue-500/30",
   parkapp: "from-indigo-600/20 to-purple-600/20 group-hover:from-indigo-600/30 group-hover:to-purple-600/30",
   amore: "from-rose-500/20 to-amber-500/20 group-hover:from-rose-500/30 group-hover:to-amber-500/30",
-  compras: "from-orange-500/20 to-red-500/20 group-hover:from-orange-500/30 group-hover:to-red-500/30"
+  compras: "from-orange-500/20 to-red-500/20 group-hover:from-orange-500/30 group-hover:to-red-500/30",
+  bonsur: "from-yellow-500/20 to-amber-600/20 group-hover:from-yellow-500/30 group-hover:to-amber-600/30",
+  pastillero: "from-emerald-500/20 to-teal-500/20 group-hover:from-emerald-500/30 group-hover:to-teal-500/30"
 };
 
 const projectLinks = {
   feriados: "https://www.feriadosarg.com.ar",
   dialcheck: "https://www.dialcheck.com.ar",
-  parkapp: "https://vercel.com/jeronimo-s-projects-101430f9/parkapp/7hA7Vt9sYUSUVqLQHaoLfV3NSLqt", // Updated
+  parkapp: "https://vercel.com/jeronimo-s-projects-101430f9/parkapp/7hA7Vt9sYUSUVqLQHaoLfV3NSLqt",
   amore: "https://www.abiestudio.com.ar",
-  compras: "https://compraslist-premium.vercel.app/" // Updated
+  compras: "https://compraslist-premium.vercel.app/",
+  bonsur: "https://bonsurredise-o.vercel.app/",
+  pastillero: "https://pastilleroapp.vercel.app/"
 };
 
 export function Projects() {
@@ -38,7 +44,9 @@ export function Projects() {
     { key: 'dialcheck', ...t.projects.list.dialcheck },
     { key: 'parkapp', ...t.projects.list.parkapp },
     { key: 'amore', ...t.projects.list.amore },
-    { key: 'compras', ...t.projects.list.compras }
+    { key: 'compras', ...t.projects.list.compras },
+    { key: 'bonsur', ...t.projects.list.bonsur },
+    { key: 'pastillero', ...t.projects.list.pastillero }
   ];
 
   return (

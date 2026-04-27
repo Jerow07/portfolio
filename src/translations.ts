@@ -60,6 +60,16 @@ export const translations = {
           title: "Compraslist",
           desc: "Lista de compras inteligente con sincronización en tiempo real y modo especial para supermercados.",
           tech: ["React", "Real-time", "LocalStorage", "PWA"]
+        },
+        bonsur: {
+          title: "Bonsur S.A.",
+          desc: "Rediseño completo del sitio web de Bonsur S.A., empresa de logística argentina. Camión 3D interactivo, scroll-driven video y animaciones avanzadas.",
+          tech: ["React", "Three.js", "Framer Motion", "Vite"]
+        },
+        pastillero: {
+          title: "PastilleroApp",
+          desc: "Aplicación de recordatorios de medicamentos con gestión de dosis, horarios personalizados y alertas para un seguimiento eficaz del tratamiento.",
+          tech: ["React", "PWA", "Tailwind", "Vercel"]
         }
       }
     }
@@ -125,6 +135,16 @@ export const translations = {
           title: "Compraslist",
           desc: "Smart shopping list with real-time synchronization and special 'Supermarket Mode'.",
           tech: ["React", "Real-time", "LocalStorage", "PWA"]
+        },
+        bonsur: {
+          title: "Bonsur S.A.",
+          desc: "Full redesign of Bonsur S.A.'s website, an Argentine logistics company. Interactive 3D truck, scroll-driven video, and advanced animations.",
+          tech: ["React", "Three.js", "Framer Motion", "Vite"]
+        },
+        pastillero: {
+          title: "PastilleroApp",
+          desc: "Medication reminder app with dose management, custom schedules, and alerts for effective treatment tracking.",
+          tech: ["React", "PWA", "Tailwind", "Vercel"]
         }
       }
     }
