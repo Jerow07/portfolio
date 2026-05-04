@@ -1,5 +1,11 @@
 export const translations = {
   es: {
+    intro: {
+      kicker: "Portfolio",
+      tagline: "Desarrollador · Diseño · Producto",
+      enter: "Entrar",
+      hint: "Pasá el mouse sobre el botón"
+    },
     hero: {
       hello: "¡Hola! Soy",
       name: "Jerónimo Parra.",
@@ -75,6 +81,12 @@ export const translations = {
     }
   },
   en: {
+    intro: {
+      kicker: "Portfolio",
+      tagline: "Developer · Design · Product",
+      enter: "Enter",
+      hint: "Hover the button"
+    },
     hero: {
       hello: "Hello! I'm",
       name: "Jerónimo Parra.",

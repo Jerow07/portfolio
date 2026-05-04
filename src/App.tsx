@@ -1,3 +1,5 @@
+import { useState } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
 import { MouseGlow } from './components/MouseGlow';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
@@ -7,6 +9,7 @@ import { Technologies } from './components/Technologies';
 import { Certifications } from './components/Certifications';
 import { Contact } from './components/Contact';
 import { ScrollToTop } from './components/ScrollToTop';
+import { IntroScreen } from './components/IntroScreen';
 import { Coffee, Globe } from 'lucide-react';
 import { LanguageProvider, useLanguage } from './context/LanguageContext';
 
@@ -47,9 +50,23 @@ function PortfolioContent() {
 }
 
 function App() {
+  const [entered, setEntered] = useState(false);
   return (
     <LanguageProvider>
-      <PortfolioContent />
+      <AnimatePresence mode="wait">
+        {!entered ? (
+          <IntroScreen key="intro" onEnter={() => setEntered(true)} />
+        ) : (
+          <motion.div
+            key="portfolio"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: [0.2, 0.8, 0.2, 1] }}
+          >
+            <PortfolioContent />
+          </motion.div>
+        )}
+      </AnimatePresence>
     </LanguageProvider>
   );
 }
